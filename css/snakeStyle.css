@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Rancho);
+.main {
+  font-family: "Rancho", sans-serif;
+  background: url(../img/background.jpg) no-repeat bottom center fixed;
+  background-size: cover;
+}
+
+.main .header {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffef70;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.72);
+}
+
+.main .header .header-title {
+  margin: 5px;
+  font-size: 7em;
+}
+
+.main .header .header-subtitle {
+  font-size: 40px;
+  color: white;
+}
+
+.main .game-container {
+  position: relative;
+  padding: 0 10px;
+}
+
+.main .game-container .canvas-container {
+  margin: 0 auto;
+  overflow: hidden;
+  max-height: 608px;
+  line-height: 0px;
+  position: relative;
+  max-width: 864px;
+  -webkit-user-select: none;
+}
+
+.main .game-container .canvas-container .canvas {
+  background: url(../img/Presentation2.jpg);
+  display: block;
+  margin: 0 auto;
+}
+
+.main .game-container .canvas-container .canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.44);
+  border-radius: 5px;
+  color: white;
+  display: block;
+  width: 864px;
+  height: 611px;
+}
+
+.main .game-container .canvas-container .canvas-overlay .overlay-inner {
+  text-align: center;
+  font-size: 5em;
+  line-height: 0.6em;
+}
+
+.main .game-container .canvas-container .canvas-overlay .overlay-inner .overlay-text {
+  display: block;
+  margin-top: 1.5em;
+}
+
+.main .game-container .score-container,
+.main .game-container .level-container {
+  position: absolute;
+  top: 0;
+  left: 105em;
+  line-height: 3em;
+  color: white;
+  width: 120px;
+  text-align: center;
+}
+
+.main .game-container .score-container .score-text,
+.main .game-container .score-container .level-text,
+.main .game-container .level-container .score-text,
+.main .game-container .level-container .level-text {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+  font-size: 3em;
+  color: white;
+}
+
+.main .game-container .score-container .score-num,
+.main .game-container .score-container .level-num,
+.main .game-container .level-container .score-num,
+.main .game-container .level-container .level-num {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+  font-size: 2em;
+  color: white;
+}
+
+.main .game-container .level-container {
+  top: 120px;
+}
+
+.main .game-container .instructions {
+  width: 24%;
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  top: 180px;
+  left: 95em;
+}
+
+.main .game-container .instructions p {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+  font-size: 2.0em;
+  font-weight: normal;
+  line-height: 1.3em;
+  color: white;
+}
+
+.main .game-container .instructions h2 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+  color: #FFEF70;
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+/*# sourceMappingURL=snakeStyle.css.map */

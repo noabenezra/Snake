@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Rancho);
+.main {
+    font-family: "Rancho", sans-serif;
+    background: url(../img/background.jpg) no-repeat bottom center fixed;
+    background-size: cover;
+    .header {
+        margin-bottom: 20px;
+        text-align: center;
+        color: #ffef70;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.72);
+        .header-title {
+            margin: 5px;
+            font-size: 7em;
+        }
+        .header-subtitle {
+            font-size: 40px;
+            color: white;
+        }
+    }
+    .game-container {
+        position: relative;
+        padding: 0 10px;
+        .canvas-container {
+            margin: 0 auto;
+            overflow: hidden;
+            max-height: 608px;
+            line-height: 0px;
+            position: relative;
+            max-width: 864px;
+            -webkit-user-select: none;
+            .canvas {
+                background: url(../img/Presentation2.jpg);
+                display: block;
+                margin: 0 auto;
+            }
+            .canvas-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.44);
+                border-radius: 5px;
+                color: white;
+                display: block;
+                width: 864px;
+                height: 611px;
+                .overlay-inner {
+                    text-align: center;
+                    font-size: 5em;
+                    line-height: 0.6em;
+                    .overlay-text {
+                        display: block;
+                        margin-top: 1.5em;
+                    }
+                }
+            }
+        }
+        .score-container,
+        .level-container {
+            position: absolute;
+            top: 0;
+            left: 105em;
+            line-height: 3em;
+            color: white;
+            width: 120px;
+            text-align: center;
+            .score-text,
+            .level-text {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+                font-size: 3em;
+                color: white;
+            }
+            .score-num,
+            .level-num {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+                font-size: 2em;
+                color: white;
+            }
+        }
+        .level-container {
+            top: 120px;
+        }
+        .instructions {
+            width: 24%;
+            position: relative;
+            overflow: hidden;
+            position: absolute;
+            top: 180px;
+            left: 95em;
+            p {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+                font-size: 2.0em;
+                font-weight: normal;
+                line-height: 1.3em;
+                color: white;
+            }
+            h2 {
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.59);
+                color: #FFEF70;
+                font-size: 3em;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}

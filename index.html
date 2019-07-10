@@ -1,0 +1,49 @@
+<html>
+
+
+<head>
+    <title>Snake Game</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <link href="css/snakeStyle.css" rel="stylesheet" />
+</head>
+
+<body class="main">
+    <div class="header">
+        <h1 class="header-title">Snake</h1>
+        <span class="header-subtitle">Made by Noa Ben Ezra</span>
+    </div>
+    <div class="game-container">
+        <div class="canvas-container">
+            <canvas class="canvas" id="snake" width="864" height="608"></canvas>
+            <div class="canvas-overlay" id="canvas-overlay">
+                <div class="overlay-inner">
+                    <span class="overlay-text" id="overlay-text" data-action="play">Play</span>
+                </div>
+            </div>
+        </div>
+        <div class="score-container">
+            <div class="score-text">Score</div>
+            <div class="score-num" id="score-num">0</div>
+        </div>
+        <div class="level-container">
+            <div class="level-text">Level</div>
+            <div class="level-num" id="level-num">1</div>
+        </div>
+        <section class="instructions">
+            <h2>Instructions</h2>
+            <p>click play to start the game! Use arrow keys to move the snake around the board.
+                <br>As the snake finds food, it eats the food, and thereby grows larger.
+                <br>If you collide with borders you will lose the game.
+                <br> if you achived 40 points score you will win and move to the next level.
+                <br>you will need to finish 4 levels to win the game.
+                <br>Good Luck!
+            </p>
+        </section>
+    </div>
+    <!-- Load scripts -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="snake.js"></script>
+</body>
+
+</html>

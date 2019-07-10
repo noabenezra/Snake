@@ -95,19 +95,11 @@ function CreateConstantWalls() {
 }
 
 function CreateDynamicWall(xRangeBegin, xRangeEnd, yRangeBegin, yRangeEnd) {
-
-    console.log(" xRangeBegin: " + xRangeBegin + " xRangeEnd: " + xRangeEnd + " yRangeBegin: " +
-        yRangeBegin + " yRangeEnd: " + yRangeEnd);
     let x = Math.floor(Math.random() * (xRangeEnd - xRangeBegin) + xRangeBegin);
     let y = Math.floor(Math.random() * (yRangeEnd - yRangeBegin) + yRangeBegin);
     let width = Math.floor(Math.random() * 3 + 1);
     let height = Math.floor(Math.random() * 3 + 1);
     items.push({ x: x * box, y: y * box, width: width * box, height: height * box });
-    console.log(" x: " + x * box + " y: " + y * box + " width: " + width * box + " height: " + height * box);
-    xRangeEnd = 0;
-    xRangeBegin = 0;
-    yRangeBegin = 0;
-    yRangeEnd = 0;
 }
 
 

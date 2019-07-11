@@ -131,17 +131,13 @@ function CreateFood() {
             }
         }
         if ((level == 3 || level == 4) && correct == true) {
-            console.log("begin" + items.length);
             for (let i = 0; i < items.length; i++) {
-                console.log("inside");
-
                 if (food.x >= items[i].x &&
                     food.x < items[i].x + items[i].width &&
                     food.y >= items[i].y &&
                     food.y < items[i].y + items[i].height) {
                     correct = false;
                 }
-                console.log(" food.x: " + food.x + " food.y " + food.y + " items[i].x " + items[i].x + " items[i].y: " + items[i].y + " items[i].width: " + items[i].width + " items[i].height " + items[i].height);
             }
         }
     }

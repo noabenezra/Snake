@@ -1,22 +1,3 @@
-const cvs = document.getElementById("snake");
-const ctx = cvs.getContext("2d");
-// create the unit
-const box = 32;
-const winScore = 40;
-// load images
-const ground = new Image();
-ground.src = "img/yellow.jpg";
-const foodImg = new Image();
-foodImg.src = "img/bug.png";
-
-var fruitImages = [
-    'img/ciliegia.png',
-    'img/orange.png',
-    'img/banana.png',
-    'img/apple.png',
-    'img/fragola.png'
-];
-
 var newGame = true; //True when starting game
 var direction = "RIGHT";
 var previousDirection = "RIGHT"; //Game previous direction (for preventing errors)
@@ -29,17 +10,9 @@ var game = 0;
 var food = {};
 var bonus = {}; //Game bonuses
 var fruits = []; //Game bonus fruits
-var fruitValues = [2, 4, 6, 8, 10];
-var fruitDuration = 5; //Seconds,
 var Snake = [];
-var items = [
-    { x: 2 * box, y: 3 * box, width: 6 * box, height: 1 * box },
-    { x: 2 * box, y: 4 * box, width: 1 * box, height: 2 * box },
-    { x: 5 * box, y: 17 * box, width: 5 * box, height: 1 * box },
-    { x: 15 * box, y: 4 * box, width: 1 * box, height: 5 * box },
-    { x: 24 * box, y: 13 * box, width: 1 * box, height: 5 * box },
-    { x: 23 * box, y: 17 * box, width: 2 * box, height: 1 * box }
-];
+var items = [];
+
 
 //Games methods
 function Play() {
@@ -59,24 +32,12 @@ function Init() {
     score = 0;
     Snake = [];
     items = [];
-    ReloadFruit();
+    CreateWalls();
     CreateFood();
     CreateSnake();
-    CreateWalls();
-
     $('#score-num').text(score.toString());
     $('#level-num').text(level.toString());
 }
-
-function ReloadFruit() {
-    //Preload fruit images
-    for (var j = 0; j < fruitImages.length; j++) {
-        const img = new Image();
-        img.src = fruitImages[j];
-        fruits.push({ img: img, value: fruitValues[j] });
-    }
-}
-
 
 function Tick() {
     Update();
@@ -95,6 +56,7 @@ function CreateConstantWalls() {
 }
 
 function CreateDynamicWall(xRangeBegin, xRangeEnd, yRangeBegin, yRangeEnd) {
+
     let x = Math.floor(Math.random() * (xRangeEnd - xRangeBegin) + xRangeBegin);
     let y = Math.floor(Math.random() * (yRangeEnd - yRangeBegin) + yRangeBegin);
     let width = Math.floor(Math.random() * 3 + 1);
@@ -104,10 +66,6 @@ function CreateDynamicWall(xRangeBegin, xRangeEnd, yRangeBegin, yRangeEnd) {
 
 
 function CreateDynamicWalls() {
-    /* let xRange = 13 * box; //416
-     let yRange = 9 * box; //288
-     let xRangeEnd = 27 * box; //864
-     let yRangeEnd = 19 * box; //608*/
     CreateDynamicWall(1, 12, 1, 8);
     CreateDynamicWall(14, 26, 1, 8);
     CreateDynamicWall(1, 12, 10, 18);
@@ -118,7 +76,7 @@ function CreateDynamicWalls() {
 function CreateWalls() {
     if (level == 3)
         CreateConstantWalls();
-    else if (level >= 4)
+    else if (level == 4)
         CreateDynamicWalls();
 }
 
@@ -173,13 +131,17 @@ function CreateFood() {
             }
         }
         if ((level == 3 || level == 4) && correct == true) {
+            console.log("begin" + items.length);
             for (let i = 0; i < items.length; i++) {
+                console.log("inside");
+
                 if (food.x >= items[i].x &&
                     food.x < items[i].x + items[i].width &&
                     food.y >= items[i].y &&
                     food.y < items[i].y + items[i].height) {
                     correct = false;
                 }
+                console.log(" food.x: " + food.x + " food.y " + food.y + " items[i].x " + items[i].x + " items[i].y: " + items[i].y + " items[i].width: " + items[i].width + " items[i].height " + items[i].height);
             }
         }
     }
